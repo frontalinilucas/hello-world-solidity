@@ -1,0 +1,17 @@
+{
+  "name": "compile-and-deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "mocha": "^9.1.0",
+    "solc": "^0.4.24",
+    "web3": "^3.0.0-rc.5"
+  }
+}
