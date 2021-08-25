@@ -25,7 +25,7 @@ contract('Airline', accounts => {
         assert.equal(customerFlight[0], flight[0]);
         assert.equal(customerFlight[1].toNumber(), flight[1].toNumber());
         assert.equal(customerTotalFlights, 1);
-        assert.equal(web3.fromWei(balance.toNumber(), 'ether'), 1);
+        assert.equal(web3.fromWei(balance.toNumber(), 'ether'), 5);
     });
 
     it('should not allow customers to buy a flight', async() => {
