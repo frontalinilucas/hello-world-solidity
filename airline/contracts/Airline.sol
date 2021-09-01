@@ -21,7 +21,7 @@ contract Airline is Ownable {
     mapping (address => Flight[]) public customerFlights;
     mapping(address => uint) public customerTotalFlights;
 
-    event FlightPurchased(address indexed customer, uint price);
+    event FlightPurchased(address indexed customer, uint price, string flight);
 
     constructor() public {
         flights.push(Flight('Tokio', 4 ether));
@@ -39,14 +39,14 @@ contract Airline is Ownable {
         customerFlights[msg.sender].push(flight);
         customerTotalFlights[msg.sender]++;
 
-        emit FlightPurchased(msg.sender, flight.price);
+        emit FlightPurchased(msg.sender, flight.price, flight.name);
     }
 
     function totalFlights() public view returns (uint) {
         return flights.length;
     }
 
-    function getFundableEther() public view returns(uint) {
+    function getRefundableEther() public view returns(uint) {
         return customers[msg.sender].loyaltyPoint * etherPerPoint;
     }
 
